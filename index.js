@@ -57,6 +57,10 @@ function digitCalc(cpfArray){
 
     cpfArray = cpfArray.reduce((ac, val) => ac + Number(val), 0);
 
-    return (11 - (Number(cpfArray) % 11));
+    const digito = 11 - (cpfArray % 11);
+
+    return digito <= 9 ? String(digito) : '0';
+
+   
 
 }
